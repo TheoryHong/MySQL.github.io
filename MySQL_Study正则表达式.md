@@ -81,6 +81,11 @@ select * from products where
 prod_name REGEXP '.[1-9]'; 
 
 
+``` 
+![image](https://github.com/sophieloveforlearning/sophielearner.github.io/blob/main/%E6%88%AA%E5%B1%8F2020-12-13%20%E4%B8%8B%E5%8D%885.57.15.png) 
+
+
+
 
 
 
