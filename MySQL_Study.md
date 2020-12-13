@@ -1,7 +1,8 @@
-## MySQL学习之路
+# MySQL学习之路
+### 7.MySQL联结表
+1. SQL最强大的功能之一就是能在数据检索查询的执行联结(join)表
+2. 联结是利用SQL的select能执行的最重要的操作。
 
-```
-CREATE Database
 
 
 
