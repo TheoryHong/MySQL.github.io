@@ -70,7 +70,8 @@ select * from products where
 prod_name REGEXP '[1-9]000';   #将各种可能性置于此 
 ```  
 ```  
-
+select * from products where
+prod_name REGEXP '[1-9]ton';  #找出数据带ton的
 
 ```
 
@@ -80,20 +81,57 @@ prod_name REGEXP '[1-9]000';   #将各种可能性置于此
 select * from products where
 prod_name REGEXP '.[1-9]'; 
 
-
 ``` 
 ![image](https://github.com/sophieloveforlearning/sophielearner.github.io/blob/main/%E6%88%AA%E5%B1%8F2020-12-13%20%E4%B8%8B%E5%8D%885.57.15.png) 
 
-
-
-
+``` 
+select * from products where
+prod_name REGEXP '\\.[1-9]'; 
+``` 
+![image](https://github.com/sophieloveforlearning/sophielearner.github.io/blob/main/%E6%88%AA%E5%B1%8F2020-12-13%20%E4%B8%8B%E5%8D%887.23.29.png)
 
 
 
 ### 9.匹配多个字符
+查找产品名字中含有stick的产品
+``` 
+select * from products where
+prod_name REGEXP 'stick'
+``` 
+![image](https://github.com/sophieloveforlearning/sophielearner.github.io/blob/main/%E6%88%AA%E5%B1%8F2020-12-13%20%E4%B8%8B%E5%8D%887.34.57.png) 
 
+``` 
+select * from products where
+prod_name REGEXP 'stick?\\)'    #？可以是任何一个字符，\\实现转移，更精确的匹配
+``` 
+![image](https://github.com/sophieloveforlearning/sophielearner.github.io/blob/main/%E6%88%AA%E5%B1%8F2020-12-13%20%E4%B8%8B%E5%8D%887.33.18.png)  
 
 
 ### 10.常见的正则中的字符类 
+[0-9] #代表所有的数字 
+[a-zA-Z]#代表所有的字符串 
 
+1) 所有产品名字中有数字的就都出来了：
+``` 
+select * from products where
+prod_name REGEXP '[0-9]'; 
+```   
+
+2）所有产品名字中，有2个连续数字的：
+``` 
+select * from products where
+prod_name REGEXP '[0-9][0-9]';    #一个方框是一个数字，有2个连续的数字才匹配 
+```
+3）所有产品名字中，有4个连续数字的：
+方法1： 
+``` 
+select * from products where
+prod_name REGEXP '[0-9][0-9][0-9][0-9]'; 
+``` 
+
+方法2： 
+``` 
+select * from products where
+prod_name REGEXP '[0-9]{4}'; 
+``` 
 
